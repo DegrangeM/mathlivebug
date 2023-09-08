@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script defer src="//unpkg.com/mathlive"></script>
+</head>
+<body>
+This window is in an iframe.<br />
+  
+Try using this field and press button.<br />
+Warning : lower your sound to low level.<br />
+Also warning : your computer might freeze.<br />
+<script>
+  setTimeout(()=>{
+    mathEl = document.createElement('math-field');
+    mathEl.innerHTML = '\\dfrac{1}{2}';
+    document.body.appendChild(mathEl);
+    window.mathVirtualKeyboard.targetOrigin = '*';
+   document.getElementsByTagName('math-field')[0].mathVirtualKeyboardPolicy = 'sandboxed';
+   document.getElementsByTagName('math-field')[0].virtualKeyboardTargetOrigin = '*';
+  },2000);
+</script>
+</body>
+</html>
